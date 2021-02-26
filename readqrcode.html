@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocExtraLayer - Read QRCode</title>
+    <style>
+        BODY {font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 8pt;}
+    </style>
+    <script src="SpeechSDK-JavaScript-1.15.1/microsoft.cognitiveservices.speech.sdk.bundle-min.js"></script>
+    <script src="js/read.js"></script>
+</head>
+<body>
+    <div id="divOutput"></div>
+    <div id="divDebug" style="padding: 1px; background-color: antiquewhite;display:none"></div>
+    <button id="btnRun" onclick="run()" style="display:none">Replay</button>
+    <script>
+        window.onload=run;
+    </script>
+</body>
+</html>

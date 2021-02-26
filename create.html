@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocExtraLayer - Create QRCode</title>
+    <style>
+        BODY {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 10pt;
+        }
+    </style>
+    <script src="js/qrcode.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="js/code.js"></script>
+</head>
+<body>
+    <h1>Create QR Code</h1>
+    <div>URL of the content</div>
+    <input type="text" style="width:95%" id="txtContent" value="https://lambot.blob.core.windows.net/github/docextralayer/demo.txt">
+    <div>Id (optional)</div>
+    <input type="text" style="width:100px;" id="txtId"><br>
+    <button onclick="Generate()">Generate QR Image</button>
+
+    <h2>QR Code</h2>
+    <div class="copyable">
+        <img src="" id=imgQ width="100px">
+    </div>
+    Click on the image to copy it and embed it in the document. You can test it right now.
+<script>
+    const baseURL="https://lambot.blob.core.windows.net/github/docextralayer/readqrcode.html";
+</script>
+</body>
+</html>
