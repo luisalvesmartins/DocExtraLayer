@@ -40,6 +40,8 @@ async function run(){
                     mode="PLAY";
                 else if (element.toLowerCase().startsWith("#read"))
                     mode="READ";
+                else if (element.toLowerCase().startsWith("#share"))
+                    mode="SHARE";
                 else
                 {
                     if (debug=="true")
@@ -57,6 +59,16 @@ async function run(){
                         case "READ":
                             bShow=true;
                             await synthesizeSpeech(element);
+                            break;
+                        case "SHARE":
+                            textToShare=element;
+                            document.getElementById("divOutput").innerHTML+=`<button onclick=goShare() type="button" title="Share this link">
+                            <svg>
+                              <use href="#share-icon"></use>
+                            </svg>
+                            <span>Share</span>
+                          </button>`;
+                        
                             break;
                     default:
                         break;
@@ -110,3 +122,25 @@ async function synthesizeSpeech(text) {
             //synthesizer.close();
         });
 }
+
+const shareDialog = document.querySelector('.share-dialog');
+const closeButton = document.querySelector('.close-button');
+
+var textToShare="";
+function goShare() {
+  if (navigator.share) { 
+   navigator.share({
+      title: textToShare,
+      url: window.location
+    }).then(() => {
+      console.log('Thanks for sharing!');
+    })
+    .catch(console.error);
+    } else {
+        shareDialog.classList.add('is-open');
+    }
+}
+
+closeButton.addEventListener('click', event => {
+  shareDialog.classList.remove('is-open');
+});
