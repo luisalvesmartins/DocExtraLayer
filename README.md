@@ -36,6 +36,9 @@ Your content can be enriched by adding some special control chars. You just need
 
 ```
 #QR:
+#Share
+More on kittens
+https://en.wikipedia.org/wiki/Kitten
 #Show
 Demo of the DocExtraLayer solution
 #Read
@@ -51,6 +54,8 @@ You can have one pragma per line and the available pragmas are:
 *#Play* - Play the media
 
 *#Show* - display the content
+
+*#Share* - Share content, using the device's native share capability. 
 
 ### Deploying this in your domain
 
