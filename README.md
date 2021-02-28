@@ -45,13 +45,15 @@ Demo of the DocExtraLayer solution
 Life is good!
 #Play
 https://www.youtube.com/embed/Z8XP7UjzvnU
+#Share
+more on kittens
 ```
 
 You can have one pragma per line and the available pragmas are:
 
 *#Read* - Read the following text
 
-*#Play* - Play the media
+*#Play* - Play the media. For Youtube videos ue the embeded URL.
 
 *#Show* - display the content
 
@@ -63,4 +65,12 @@ Customer will prefer to see this embeded in your site. You just need to deploy t
 
 ```
     const baseURL="https://<your url>/readqrcode.html";
+```
+
+### To debug the request
+
+A debug region will be displayed if you add *debug=true* to the readqrcode query string.
+
+```
+http://localhost/readqrcode.html?d=./demo.txt&i=&debug=true
 ```

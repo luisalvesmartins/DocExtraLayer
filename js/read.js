@@ -15,10 +15,6 @@ async function run(){
     var id=getParameterByName("i");
     var debug=getParameterByName("debug");
 
-    console.log("Path:" + path)
-    console.log("Id:" + id)
-    console.log("Debug:" + debug)
-
     document.getElementById("divOutput").innerHTML="";
     if (debug=="true")
         document.getElementById("divDebug").style.display="block";
@@ -124,7 +120,6 @@ async function synthesizeSpeech(text) {
 }
 
 const shareDialog = document.querySelector('.share-dialog');
-const closeButton = document.querySelector('.close-button');
 
 var textToShare="";
 function goShare() {
@@ -133,7 +128,7 @@ function goShare() {
       title: textToShare,
       url: window.location
     }).then(() => {
-      console.log('Thanks for sharing!');
+      //console.log('Thanks for sharing!');
     })
     .catch(console.error);
     } else {
@@ -141,6 +136,3 @@ function goShare() {
     }
 }
 
-closeButton.addEventListener('click', event => {
-  shareDialog.classList.remove('is-open');
-});
